@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Link Teristimewa ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- AUDIO (tukar link bawah ni dengan lagu sendiri) -->
+  <audio id="loveAudio" src="PRESET AM KECE DJ SELALU BEGITU ALASAN DIRIMU VIRAL FYP TIKTOK‼️.mp3/""SoundHelix-Song-1.mp3" preload="auto"></audio>
+
+  <div class="card-container" id="page1">
+    <div class="card">
+      <div class="heart" aria-hidden="true">💖</div>
+      <h1>Buat Awak Seorang 💕</h1>
+      <p>Setiap detik saya bersama awak adalah kebahagiaan. Saya cipta link ini khas untuk kita. Tolong buka, ya? 🥺</p>
+      <a class="btn" onclick="showLovePage()">Buka Halaman Cinta Kita</a>
+      <div class="meta">❤️ Dibuat dengan sepenuh hati ❤️</div>
+    </div>
+  </div>
+
+  <div class="love-container" id="page2" style="display:none;opacity:0;">
+    <div class="love-message">
+      <div class="line">
+        <span class="word">I</span>
+        <span class="word">Love</span>
+        <span class="word">You</span>
+        <span class="word">!</span>
+      </div>
+      <div class="heart-symbol">❤️</div>
+    </div>
+    <div class="subtext">
+      <p>Terima kasih kerana sudi buka, sayang. Ini untuk awak. 🥰</p>
+    </div>
+  </div>
+
+<script>
+  function showLovePage() {
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+    const loveAudio = document.getElementById('loveAudio');
+
+    // Mainkan audio bila klik
+    loveAudio.currentTime = 0;
+    loveAudio.play().catch(err => console.log("Audio gagal auto play:", err));
+
+    // Animasi tukar halaman
+    page1.style.opacity = '0';
+    setTimeout(() => {
+      page1.style.display = 'none';
+      page2.style.display = 'flex';
+      setTimeout(() => {
+        page2.style.transition = 'opacity 0.6s ease';
+        page2.style.opacity = '1';
+      }, 50);
+    }, 500);
+  }
+
+  // Animasi love jatuh
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("love");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+    heart.innerText = ["💖", "💘", "💕", "❤️", "💞"][Math.floor(Math.random() * 5)];
+    document.body.appendChild(heart);
+    setTimeout(() => { heart.remove() }, 5000);
+  }
+  setInterval(createHeart, 200);
+</script>
+</body>
+</html>
